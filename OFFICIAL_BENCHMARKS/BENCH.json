@@ -1,0 +1,295 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "PHP_CRUD_API",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\SUPERMARKETS\\PHP_CRUD_API\\UPSTREAM_CLONE",
+    "git": {
+      "head": "399a398749ab687a68286260023bd73d79da5f26",
+      "url": "https://github.com/mevdschee/php-crud-api",
+      "branch": "main",
+      "committed_at": "2026-08-28T20:59:17+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 311,
+    "source_files_scanned": 130,
+    "lines_of_code": 12101,
+    "languages": {
+      ".log": 137,
+      ".php": 121,
+      ".html": 17,
+      "(none)": 9,
+      ".sh": 9,
+      ".sql": 7,
+      ".md": 3,
+      ".json": 2,
+      ".js": 2,
+      ".lock": 1,
+      ".yml": 1,
+      ".neon": 1,
+      ".png": 1
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 15,
+    "files_with_findings": 14,
+    "severity": {
+      "high": 11,
+      "medium": 3,
+      "low": 1
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "docker/debian13/run.sh",
+            "line": 8,
+            "cwe": "CWE-732",
+            "snippet": "mkdir -p /var/run/mysqld && chmod 777 /var/run/mysqld"
+          },
+          {
+            "severity": "high",
+            "file": "docker/debian12/run.sh",
+            "line": 8,
+            "cwe": "CWE-732",
+            "snippet": "mkdir /var/run/mysqld && chmod 777 /var/run/mysqld"
+          },
+          {
+            "severity": "high",
+            "file": "docker/debian11/run.sh",
+            "line": 8,
+            "cwe": "CWE-732",
+            "snippet": "mkdir /var/run/mysqld && chmod 777 /var/run/mysqld"
+          }
+        ]
+      },
+      "A02-CryptographicFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/Tqdev/PhpCrudApi/Database/GenericDB.php",
+            "line": 403,
+            "cwe": "CWE-327",
+            "snippet": "return md5(json_encode(["
+          },
+          {
+            "severity": "medium",
+            "file": "src/Tqdev/PhpCrudApi/Config/Config.php",
+            "line": 37,
+            "cwe": "CWE-327",
+            "snippet": "return md5(json_encode($this->values));"
+          },
+          {
+            "severity": "medium",
+            "file": "src/Tqdev/PhpCrudApi/Cache/TempFileCache.php",
+            "line": 29,
+            "cwe": "CWE-327",
+            "snippet": "$this->clean($this->path, array_filter($this->segments), strlen(md5('')), false);"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "build.php",
+            "line": 38,
+            "cwe": "CWE-120",
+            "snippet": "$command = sprintf("
+          },
+          {
+            "severity": "high",
+            "file": "test.php",
+            "line": 236,
+            "cwe": "CWE-120",
+            "snippet": "$errors[] = sprintf(\"parameter '%s' of '%s' has unknown location '%s'\", $parameter['name'], $location, $parameter['in']);"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/Api.php",
+            "line": 66,
+            "cwe": "CWE-120",
+            "snippet": "$prefix = sprintf('phpcrudapi-%s-', substr($config->getUID(), 0, 8));"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/Record/ErrorCode.php",
+            "line": 85,
+            "cwe": "CWE-120",
+            "snippet": "return sprintf($this->message, $argument);"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/OpenApi/OpenApiGeoJsonBuilder.php",
+            "line": 106,
+            "cwe": "CWE-120",
+            "snippet": "$path = sprintf('/geojson/%s', $tableName);"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/OpenApi/OpenApiRecordsBuilder.php",
+            "line": 136,
+            "cwe": "CWE-120",
+            "snippet": "$path = sprintf('/records/%s', $tableName);"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/Database/GenericDefinition.php",
+            "line": 209,
+            "cwe": "CWE-89",
+            "snippet": "return \"SELECT setval($p3, (SELECT max($p2)+1 FROM $p1));\";"
+          },
+          {
+            "severity": "high",
+            "file": "src/Tqdev/PhpCrudApi/Column/ReflectionService.php",
+            "line": 38,
+            "cwe": "CWE-120",
+            "snippet": "$key = sprintf('%s-ReflectedDatabase', $this->db->getCacheKey());"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/Tqdev/PhpCrudApi/Api.php",
+            "line": 205,
+            "cwe": "CWE-",
+            "snippet": "$request = $this->applyParsedBodyHack($request);"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 0,
+        "findings": []
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:a1dd80d7-1246-598b-aca3-7970179771cb",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:18:14Z",
+      "component": {
+        "type": "application",
+        "name": "PHP_CRUD_API",
+        "version": "399a398749ab",
+        "bom-ref": "pkg:generic/anticloud/PHP_CRUD_API@399a398749ab",
+        "purl": "pkg:generic/anticloud/PHP_CRUD_API@399a398749ab",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "399a398749ab687a68286260023bd73d79da5f26"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/mevdschee/php-crud-api"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 26.98
+}
