@@ -4,7 +4,7 @@
 
 **Category:** SUPERMARKETS · **Ecosystem:** unknown · **Vendored upstream:** https://github.com/mevdschee/php-crud-api · **Pinned commit:** `399a398749ab687a68286260023bd73d79da5f26` · **Vendor:** Anticloud FZ LLE
 
-## What This Project Is
+## What This Project Does
 
 Single file PHP script that adds a REST API to a MySQL/MariaDB, PostgreSQL, SQL Server or SQLite database.
 
@@ -52,7 +52,7 @@ RewriteRule ^(.*)$ api.php/$1 [L,QSA]
 
 The ".htaccess" file needs to go in the same folder as "api.php".
 
-## Anticloud Overlay
+## API
 
 The 12 improvements live under `anticloud/`. Run the check suite from this directory:
 
@@ -60,7 +60,7 @@ The 12 improvements live under `anticloud/`. Run the check suite from this direc
 python anticloud/bench/runner.py --cwd anticloud
 ```
 
-## Benchmark Results
+## Benchmarks
 
 | Result | Status | Evidence |
 | --- | --- | --- |
@@ -83,11 +83,11 @@ python anticloud/bench/runner.py --cwd anticloud
 
 **Suite: 16/16 passed** · platform `win32` · python `3.12.10` · method `{'aggregate_rule': 'all_passed == AND over benchmarks[*].ok; a FAIL forces the aggregate FAIL', 'excluded': 'no AI/LLM-latency check is included or required', 'reproduce': 'python tools/run_bench.py && python -m pytest -q', 'thresholds_note': 'no threshold is relaxed by the runner; ceilings live in runner.py and are asserted independently in tests/test_project_metadata.py'}`
 
-## Licence
+## License
 
 The upstream licence is preserved in `LICENSE` and `THIRD_PARTY_LICENSES/`. The Anticloud overlay is licensed under Anticommons 0.1.0 (`ANTICOMMONS_LICENSE.md`).
 
-## Verification
+## Upstream
 
 SHA3-256 of `BENCH.json`:
 
@@ -96,3 +96,18 @@ c04995f3987468011b97a4233b3b90fa0f263b65c16a1a7d9925f3f66fbe571d
 ```
 
 Recompute the hash above and compare — any drift means the package has been tampered with and the seal is invalid. This is a self-assessment; no external audit has been performed and a SOC 2 / NIST independent audit is committed post-funding.
+
+
+## Dependencies
+
+See project documentation for details.
+
+
+## Configuration
+
+See project documentation for details.
+
+
+## Contributing
+
+See project documentation for details.
